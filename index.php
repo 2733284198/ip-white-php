@@ -2,6 +2,11 @@
 
     isAccess();
 
+    /**
+     * 检测是否在白名单内，否则拒绝访问
+     * 
+     * @return void
+     */
     function isAccess(){
         $ip = getRemoteIp();
 
@@ -18,6 +23,11 @@
         
     }
 
+    /**
+     * 获取用户的IP
+     * 
+     * @return void
+     */
     function getRemoteIp(){
         if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
             $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
