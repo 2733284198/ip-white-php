@@ -1,5 +1,4 @@
 <?php
-
 $inst = new Redis();
 $inst->connect('127.0.0.1', 6379);
 
@@ -42,7 +41,7 @@ foreach($ip as $val) {
             // 删除
             $('#ipList').on('click','.js_del',function(){
                 var _this = this,
-                    ip_text = $(this).attr('data'); 
+                    ip_text = $.trim($(this).attr('data')); 
                 $.ajax({
                     url: 'http://localhost:6699/ip-white-php/ip.php',
                     method: 'POST',
@@ -59,8 +58,8 @@ foreach($ip as $val) {
             })
             // 添加
             $('#submit').click(function(){
-                var ip_text = $("input[type=text]").val(),
-                    re = /^\d{2,3}.\d{2,3}.\d{2,3}.\d{1,3}$/;
+                var ip_text = $.trim($("input[type=text]").val()),
+                    re = /^\d{2,3}.\d{1,3}.\d{1,3}.\d{1,3}$/;
                 if (!re.test(ip_text)) {
                     alert('您输入的IP格式不对');
                     return;
