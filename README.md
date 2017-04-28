@@ -8,7 +8,7 @@ index.php 获取当前用户的IP，并根据白名单内IP查找是否存在，
 
 升级版中引入了panel方便大家快速感知该程序的功能。
 
-![QQ20170428](/Users/wangyong/www/ip-white-php/QQ20170428.png)
+![QQ20170428](QQ20170428.png)
 
 
 
