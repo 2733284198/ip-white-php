@@ -17,7 +17,7 @@ if(!empty($ip)){
         }
     } else {
         if($type == 'add'){
-            if(preg_match('/^\d{2,3}.\d{1,3}.\d{1,3}.\d{1,3}$/',$ip)) {
+            if(preg_match('/^\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}$/',$ip)) {
                 $rs = $inst->sAdd('ip_blacklist',$ip);
                 echo $rs;
             } else {
@@ -28,7 +28,7 @@ if(!empty($ip)){
             $ips = explode('|',$ip);
             $i = 0;
             foreach($ips as $_ip){
-                if(preg_match('/^\d{2,3}.\d{1,3}.\d{1,3}.\d{1,3}$/',$_ip)) {
+                if(preg_match('/^\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}$/',$_ip)) {
                     if($inst->sAdd('ip_blacklist',$_ip) == 1){
                         $i++;
                     }
